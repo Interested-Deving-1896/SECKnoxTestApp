@@ -1,60 +1,75 @@
-# KnoxProbe (MVP)
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# SECKnoxTestApp
 
-KnoxProbe is an internal Android diagnostic app for comparing observable behavior between:
-- a Samsung device's normal environment, and
-- Samsung Secure Folder / Knox containerized environment.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/SECKnoxTestApp)
 
-It is **diagnostic-only** and uses **official Android SDK APIs**.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-## What this app does
-- Captures a diagnostic snapshot with:
-  - Network state and visible transports (including VPN transport visibility)
-  - Link properties (interface, MTU, DNS, routes, proxy when available)
-  - External HTTPS probe results (endpoint/body snippet/latency/timestamp)
-  - Device time, timezone, UTC offset, elapsed realtime
-  - Optional location snapshot (after runtime permission)
-  - Visibility checks for a small predefined package list
-  - App-private / app-specific external storage marker checks
-- Exports snapshot JSON through Storage Access Framework (user-selected destination).
+## Architecture
 
-## What this app does **not** do
-- No VPN concealment or bypass behavior
-- No anti-detection / evasion logic
-- No hidden APIs / reflection hacks / non-SDK APIs
-- No root tricks
-- No analytics SDKs, trackers, ads, or backend integration
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-## Permissions and rationale
-- `INTERNET`: external probe requests
-- `ACCESS_NETWORK_STATE`: read connectivity/network capabilities/link properties
-- `ACCESS_COARSE_LOCATION`: optional location snapshot (coarse)
-- `ACCESS_FINE_LOCATION`: optional higher-precision location if granted
+## Install
 
-No broad file access or `QUERY_ALL_PACKAGES` is used.
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-## Package visibility approach
-A small predefined list is probed. Manifest `<queries>` only includes those package names.
-Results are still limited by Android package visibility rules.
+```bash
+git clone https://github.com/Interested-Deving-1896/SECKnoxTestApp.git
+cd SECKnoxTestApp
+```
 
-## Build (Android Studio stable)
-1. Open the repository in Android Studio.
-2. Let Gradle sync.
-3. Build and run the `app` module.
+## Usage
 
-## Install on Samsung test device
-1. Enable developer options + USB debugging.
-2. Connect device and install from Android Studio (or sideload APK).
-3. Run once in normal environment.
-4. Run again inside Secure Folder (if app is available there).
-5. Export snapshots and compare.
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-## Suggested test matrix
-- Baseline network, no VPN, normal environment
-- VPN enabled, normal environment
-- Secure Folder environment, no VPN
-- Secure Folder environment, VPN enabled (if policy allows)
-- Compare exported snapshots with focus on strong vs circumstantial signals
+## Configuration
 
-## Notes on interpretation
-Some artifacts are direct app-visible signals (strong), while others are indirect and circumstantial.
-Do not overinterpret single weak signals without corroboration.
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/SECKnoxTestApp`](https://github.com/Interested-Deving-1896/SECKnoxTestApp) and mirrored through:
+
+```
+Interested-Deving-1896/SECKnoxTestApp  ──►  OpenOS-Project-OSP/SECKnoxTestApp  ──►  OpenOS-Project-Ecosystem-OOC/SECKnoxTestApp
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
